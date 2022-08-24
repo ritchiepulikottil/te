@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+ <html>  
+ <head>  
+     <title>OTP Verification</title>  
+	 <link rel ="icon" type="image/png" href="{{url_for('static', filename='favicon-cash.png')}}">
+ </head>  
+   <body>  
+  <form action = "/validate" method="post">   
+ <h4> OTP has been sent to the email id. Please check the email for the confirmation.</h4>  
+ Enter OTP(One-time password): <input type="text" name="otp">  
+ <input type="submit" value="Submit">  
+ </form>  
+ </body>  
+ </html>

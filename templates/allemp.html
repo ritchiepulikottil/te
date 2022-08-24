@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel ="icon" type="image/png" href="{{url_for('static', filename='favicon-cash.png')}}">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+	tr{
+		background-color:white;
+	}
+    th{ 
+        color:#fff;
+    }
+
+
+	body {
+	  background-color: #F7F6BB
+	}
+
+
+
+</style>
+  </head>
+
+  <body>
+            }
+</style>
+
+  <center><a href="/dashboard" style="font-style:bold" class="tm-white-text">HOME</a></center>
+  <center><h2>Employee list</h2></center>
+<table class="table table-striped">
+    <tr  class="bg-info">
+	    <th>Employee ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+		<th>Phone</th>
+
+    </tr>
+
+    <tbody id="employee_table">
+        
+    </tbody>
+</table>
+        
+    </div>
+    </div>
+     
+  </body>
+  
+</html>
+<script>
+$(document).ready(function(){
+  $.getJSON("https://insiteplus.herokuapp.com/emp", function(data){
+    var employee_data = '';
+    $.each(data, function(key, value){
+      employee_data += '<tr>';
+	  employee_data += '<td>'+value.id+'</td>';
+      employee_data += '<td>'+value.name+'</td>';
+      employee_data += '<td>'+value.address+'</td>';
+	  employee_data += '<td>'+value.email+'</td>';
+      employee_data += '<td>'+value.phone+'</td>';
+      employee_data += '<tr>';
+    });
+    $('#employee_table').append(employee_data);
+  });
+  
+});
+</script>
