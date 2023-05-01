@@ -5,7 +5,7 @@ flask_restful
 pyrebase
 Pyrebase4
 pyrebase4
-Flask==2.1.1
+Flask==2.3.2
 Flask-Mail==0.9.1
 Flask-Ext
 Flask-MySQLdb==1.0.1
